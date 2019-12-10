@@ -98,7 +98,7 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
                 while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <div class="col">
                     <a href="<?php echo esc_url( get_permalink() ); ?>">
-                        <?php the_post_thumbnail('medium', array('class' => 'rdrit-home-thumbnail-max200') ); ?>
+                        <?php the_post_thumbnail('thumbnail'); ?>
                     </a><br/>
                     <a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                 </div>
@@ -106,20 +106,7 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
                 endwhile;           
             ?> </div> <?php
         }elseif($style_rp == 2){            
-            while ($my_query->have_posts()) : $my_query->the_post(); ?>
-                <?php $excerpt = get_the_content(''); ?>
-
-                <div class="row">
-                    <div class="col-2">
-                        <div class="rdr-rp-image" style="background:url('<?php echo get_the_post_thumbnail_url(); ?>') 50% 50% no-repeat;width: 97.75px;height:68px;margin-bottom: 5px;background-size:  cover;"></div>
-                    </div>
-                    <div class="col-10">
-                        <a class="rdr-rp-title" href="<?php the_permalink() ?>" style="font-size:12px;line-height:22px;"><?php the_title(); ?></a><br/>
-                        <span class="rdr-tp-text" style="font-size:11px;"><?php echo wp_html_excerpt(strip_shortcodes($excerpt),250) ?></span>
-                    </div>
-                </div><hr/>
-            <?php
-            endwhile;          
+            include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-2.php';           
         }elseif($style_rp == 3){
             include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-3.php'; 
         }
