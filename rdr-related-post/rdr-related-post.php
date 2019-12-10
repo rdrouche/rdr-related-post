@@ -13,11 +13,10 @@ Author URI: https://rdr-it.com
  * Ajout de poste aleatoire sur pas de tag sur le post.
  * 
  * @param   int     $post_id    Post ID
- * @param   int     $per_page   Number of post print
+ * @param   array   $custom_options    Param affichage posts
  * @param   int     $style_rp   Result HTML
- * V2
  */
-function get_rdr_related_post($post_id, $per_page = 3, $style_rp = 3){
+function get_rdr_related_post($post_id, $custom_options = array(), $per_page = 3, $style_rp = 3){
     // Param Query
     $args=array(
         'post__not_in'      =>  array($post_id),
