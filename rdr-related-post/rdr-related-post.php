@@ -16,28 +16,29 @@ Author URI: https://rdr-it.com
  * @param   array   $custom_options    Param affichage posts
  * @param   int     $style_rp   Result HTML
  */
-function get_rdr_related_post($post_id, $custom_options = array(), $per_page = 3, $style_rp = 3){
-    
+function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_rp = 3){
+    global $post; 
     // Param custom
     $options = array(
         'per_page'      =>    isset($custom_options['per_page'])  ? $custom_options['per_page'] : 3,
         'style_rp'      =>    isset($custom_options['style_rp'])  ? $custom_options['style_rp'] : 3,
         'post_type'     =>    isset($custom_options['post_type'])  ? $custom_options['post_type'] : 'post',
+        'caching'       =>    isset($custom_options['caching'])  ? true : false,
+        'find_by'       =>    isset($custom_options['find_by'])  ? $custom_options['find_by'] : 'both',
     );
     
     // Param Query
     $args=array(
-        'post__not_in'      =>  array($post_id),
+        'post__not_in'      =>  array($post->ID),
         'posts_per_page'    =>  $per_page,
         'caller_get_posts'  =>  1,
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
     );
-
-    
+   
 
     // Recuperation des tags
-    $tags = wp_get_post_tags($post_id);
+    $tags = wp_get_post_tags($post->ID);
 
     if( $tags ){
         // post contenant des TAGS
@@ -51,7 +52,7 @@ function get_rdr_related_post($post_id, $custom_options = array(), $per_page = 3
           
     }else{
         // Recuperation categories du post
-        $cats = wp_get_post_categories($post_id);
+        $cats = wp_get_post_categories($post->ID);
         if($cats){
             $cats_ids = array();
             foreach($cats as $individual_cat){
