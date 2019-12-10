@@ -1,4 +1,7 @@
 <?php
+/**
+ * Related post style 2 based on bootstrap
+ */
 while ($my_query->have_posts()) : $my_query->the_post(); ?>
     <?php $excerpt = get_the_content(''); ?>
     <div class="row">

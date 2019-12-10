@@ -1,3 +1,8 @@
+<?php
+/**
+ * Related post style 1 based on bootstrap
+ */
+?>
 <div class="row"> 
 <?php            
 while ($my_query->have_posts()) : $my_query->the_post(); ?>
