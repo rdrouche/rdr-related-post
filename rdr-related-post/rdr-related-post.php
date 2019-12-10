@@ -35,6 +35,11 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
     );
+
+    // Traitement find by
+    switch( $options['find_by'] ){
+        case 'both':
+    }
    
 
     // Recuperation des tags
