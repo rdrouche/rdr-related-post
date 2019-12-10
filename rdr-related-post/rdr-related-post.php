@@ -8,6 +8,9 @@ Version: 1.0
 Author URI: https://rdr-it.com
 */
 
+define('RDR_RP_PLUGIN_DIR', dirname( __FILE__ ) );
+define('DS', DIRECTORY_SEPARATOR);
+
 /**
  * Permet l'affichage d'article en relatation
  * Ajout de poste aleatoire sur pas de tag sur le post.
@@ -85,32 +88,6 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
                 $args['tag__in'] = $tag_ids;                  
             }
     }
-   
-
-    // Recuperation des tags
-    $tags = wp_get_post_tags($post->ID);
-
-    if( $tags ){
-        // post contenant des TAGS
-        $tag_ids = array();	
-        foreach($tags as $individual_tag){
-            $tag_ids[] = $individual_tag->term_id;
-        } 
-
-        // Contruction filtre de la requete
-        $args['tag__in'] = $tag_ids;
-          
-    }else{
-        // Recuperation categories du post
-        $cats = wp_get_post_categories($post->ID);
-        if($cats){
-            $cats_ids = array();
-            foreach($cats as $individual_cat){
-                $cats_ids[] = $individual_cat->term_id;
-            }
-            $args['category__in'] = $tag_ids;
-        } // /if($cats)
-    } // /else
 
     $my_query = new WP_Query($args);
 
