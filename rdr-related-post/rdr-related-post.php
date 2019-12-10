@@ -39,6 +39,51 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
     // Traitement find by
     switch( $options['find_by'] ){
         case 'both':
+            $tags = wp_get_post_tags($post->ID);
+            if( $tags ){
+                // post contenant des TAGS
+                $tag_ids = array();	
+                foreach($tags as $individual_tag){
+                    $tag_ids[] = $individual_tag->term_id;
+                } 
+        
+                // Contruction filtre de la requete
+                $args['tag__in'] = $tag_ids;                  
+            }
+            // Recuperation categories du post
+            $cats = wp_get_post_categories($post->ID);
+            if($cats){
+                $cats_ids = array();
+                foreach($cats as $individual_cat){
+                    $cats_ids[] = $individual_cat->term_id;
+                }
+                $args['category__in'] = $tag_ids;
+            } // /if($cats)
+            
+        break;
+        case 'cat':
+            $cats = wp_get_post_categories($post->ID);
+            if($cats){
+                $cats_ids = array();
+                foreach($cats as $individual_cat){
+                    $cats_ids[] = $individual_cat->term_id;
+                }
+                $args['category__in'] = $tag_ids;
+            }
+        break;
+        case 'tag':
+        default:
+            $tags = wp_get_post_tags($post->ID);
+            if( $tags ){
+                // post contenant des TAGS
+                $tag_ids = array();	
+                foreach($tags as $individual_tag){
+                    $tag_ids[] = $individual_tag->term_id;
+                } 
+        
+                // Contruction filtre de la requete
+                $args['tag__in'] = $tag_ids;                  
+            }
     }
    
 
