@@ -17,6 +17,14 @@ Author URI: https://rdr-it.com
  * @param   int     $style_rp   Result HTML
  */
 function get_rdr_related_post($post_id, $custom_options = array(), $per_page = 3, $style_rp = 3){
+    
+    // Param custom
+    $options = array(
+        'per_page'      =>    isset($custom_options['per_page'])  ? $custom_options['per_page'] : 3,
+        'style_rp'      =>    isset($custom_options['style_rp'])  ? $custom_options['style_rp'] : 3,
+        'post_type'     =>    isset($custom_options['post_type'])  ? $custom_options['post_type'] : 'post',
+    );
+    
     // Param Query
     $args=array(
         'post__not_in'      =>  array($post_id),
@@ -25,6 +33,8 @@ function get_rdr_related_post($post_id, $custom_options = array(), $per_page = 3
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
     );
+
+    
 
     // Recuperation des tags
     $tags = wp_get_post_tags($post_id);
