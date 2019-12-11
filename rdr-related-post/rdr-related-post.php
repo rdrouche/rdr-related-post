@@ -27,7 +27,7 @@ function get_rdr_related_post($custom_options = array()){
         'style_rp'      =>    isset($custom_options['style_rp'])  ? $custom_options['style_rp'] : 3,
         'post_type'     =>    isset($custom_options['post_type'])  ? $custom_options['post_type'] : 'post',
         'caching'       =>    isset($custom_options['caching'])  ? true : false,
-        'find_by'       =>    isset($custom_options['find_by'])  ? $custom_options['find_by'] : 'both',
+        'find_by'       =>    isset($custom_options['find_by'])  ? $custom_options['find_by'] : 'tag',
     );
 
     // Load CSS grid on demand
@@ -109,13 +109,13 @@ function get_rdr_related_post($custom_options = array()){
 
     show_rdr_rp:
     if( $my_query->have_posts() ) {
-
-        if($style_rp == 1){
-            include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-1.php';  
-        }elseif($style_rp == 2){            
-            include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-2.php';           
-        }elseif($style_rp == 3){
-            include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-3.php'; 
+        echo "dans la boucle";
+        if($options['style_rp'] == 1){
+            include RDR_RP_PLUGIN_DIR . DS . 'templates' . DS . 'rdr-rp-style-1.php';  
+        }elseif($options['style_rp'] == 2){            
+            include RDR_RP_PLUGIN_DIR . DS . 'templates' . DS . 'rdr-rp-style-2.php';           
+        }elseif($options['style_rp']  == 3){
+            include RDR_RP_PLUGIN_DIR . DS . 'templates' . DS . 'rdr-rp-style-3.php'; 
         }else{
             // Load personnal template in themes
             get_template_part( 'templates/rdr-rp-style-custom');
