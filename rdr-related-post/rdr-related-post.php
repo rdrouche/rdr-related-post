@@ -29,6 +29,11 @@ function get_rdr_related_post($custom_options = array()){
         'caching'       =>    isset($custom_options['caching'])  ? true : false,
         'find_by'       =>    isset($custom_options['find_by'])  ? $custom_options['find_by'] : 'both',
     );
+
+    // Load CSS grid on demand
+    if( isset( $custom_options['load_css'] ) ){
+        wp_enqueue_style('rdr-rp-css-ondemand','/wp-content/plugins/rdr-related-post/asset/css/'.$custom_options['load_css'].'.css')
+    }
     
     // Param Query
     $args=array(
