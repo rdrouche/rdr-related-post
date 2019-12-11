@@ -32,7 +32,7 @@ function get_rdr_related_post($custom_options = array()){
 
     // Load CSS grid on demand
     if( isset( $custom_options['load_css'] ) ){
-        wp_enqueue_style('rdr-rp-css-ondemand','/wp-content/plugins/rdr-related-post/asset/css/'.$custom_options['load_css'].'.css')
+        wp_enqueue_style('rdr-rp-css-ondemand','/wp-content/plugins/rdr-related-post/asset/css/'.$custom_options['load_css'].'.css');
     }
     
     // Param Query
