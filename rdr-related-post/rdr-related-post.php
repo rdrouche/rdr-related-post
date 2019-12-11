@@ -132,3 +132,14 @@ function get_rdr_related_post($custom_options = array()){
         wp_reset_query();
     } // /$my_query->have_posts()
 } // end function
+
+/**
+ * Get Related Post by Shortcode
+ */
+function rdr_rp_sc($atts = []){
+    ob_start();
+    get_rdr_related_post($atts);
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('get_rdr_rp','rdr_rp_sc');
