@@ -126,6 +126,7 @@ function get_rdr_related_post($custom_options = array()){
             include RDR_RP_PLUGIN_DIR . DS . 'templates' . DS . 'rdr-rp-style-3.php'; 
         }else{
             // Load personnal template in themes
+            set_query_var('my_query', $my_query);
             get_template_part( 'templates/rdr-rp-style-custom');
         }
         wp_reset_query();
