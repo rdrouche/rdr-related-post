@@ -56,6 +56,7 @@ Dans le fichier de votre thème généralement (content-single.php) qui gére l'
 	<?php get_rdr_related_post(); ?>
 </div><!-- /.inside-article -->
 <!-- END RELATED POST -->
+```
 
 Utilisation avec des paramètres : 
 
@@ -68,3 +69,4 @@ Utilisation avec des paramètres :
 	<?php get_rdr_related_post(array('caching' => true, 'style_rp' => 'perso')); ?>
 </div><!-- /.inside-article -->
 <!-- END RELATED POST -->
+```
