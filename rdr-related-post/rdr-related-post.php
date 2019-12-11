@@ -47,6 +47,7 @@ function get_rdr_related_post($custom_options = array()){
         'caller_get_posts'  =>  1,
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
+        'post_type'         =>  $options['post_type'],
     );
 
     if($options['caching']){
