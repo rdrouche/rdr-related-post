@@ -25,3 +25,8 @@ L'appel de la fonction get_rdr_related_post prend les paramètres dans array PHP
 - per_page : nombre de post à afficher, par défaut 3.
 - style_rp : template à utiliser, il est possible d'utiliser un template personnel (voir utiler un template personnel). Par défaut 3 (rdr-rp-style-3.php)
 - post_type : Type de post wordpress par défaut post. voir <a href="https://developer.wordpress.org/reference/classes/wp_query/#post-type-parameters" target="_blank">Post Type Parameters</a>
+- caching : permet d'activer le cache en base de données. Par défaut false
+- find_by : ce paramètre de configurer les éléments pour trouver les articles similaires
+    - tag : (défaut) utilise les tags de l'article
+    - cat : catégories
+    - both : tag et catégories, élément le plus restrictif
