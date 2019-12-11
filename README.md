@@ -47,7 +47,24 @@ Deux possibilités pour utiliser RDR Related Post.
 
 Dans le fichier de votre thème généralement (content-single.php) qui gére l'affichage des articles, ajouter à l'endroit voulu le code suivant : 
 
-```php
-<?php
-get_rdr_related_post();
-?>
+```
+<!-- START RELATED POST -->
+<div class="inside-article">
+	<br/>
+	<h3>Related Posts</h3>
+	<br/>    
+	<?php get_rdr_related_post(); ?>
+</div><!-- /.inside-article -->
+<!-- END RELATED POST -->
+
+Utilisation avec des paramètres : 
+
+```
+<!-- START RELATED POST -->
+<div class="inside-article">
+	<br/>
+	<h3>Related Posts</h3>
+	<br/>    
+	<?php get_rdr_related_post(array('caching' => true, 'style_rp' => 'perso')); ?>
+</div><!-- /.inside-article -->
+<!-- END RELATED POST -->
