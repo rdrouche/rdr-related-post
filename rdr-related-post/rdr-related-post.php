@@ -111,6 +111,9 @@ function get_rdr_related_post($custom_options = array()){
             include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-2.php';           
         }elseif($style_rp == 3){
             include RDRITPCT_DIR . DS . 'templates' . DS . 'rdr-rp-style-3.php'; 
+        }else{
+            // Load personnal template in themes
+            get_template_part( 'templates/rdr-rp-style-custom');
         }
         wp_reset_query();
     } // /$my_query->have_posts()
