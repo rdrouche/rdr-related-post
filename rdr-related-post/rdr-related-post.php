@@ -8,8 +8,16 @@ Version: 1.0
 Author URI: https://rdr-it.com
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 define('RDR_RP_PLUGIN_DIR', dirname( __FILE__ ) );
-define('DS', DIRECTORY_SEPARATOR);
+
+if( !defined('DS') ){
+    define('DS', DIRECTORY_SEPARATOR);
+}
+
 
 /**
  * Permet l'affichage d'article en relatation
