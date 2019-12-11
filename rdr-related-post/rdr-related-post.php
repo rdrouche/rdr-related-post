@@ -19,7 +19,7 @@ define('DS', DIRECTORY_SEPARATOR);
  * @param   array   $custom_options    Param affichage posts
  * @param   int     $style_rp   Result HTML
  */
-function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_rp = 3){
+function get_rdr_related_post($custom_options = array()){
     global $post; 
     // Param custom
     $options = array(
@@ -38,6 +38,13 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
     );
+
+    if($options['caching']){
+        $my_query = get_transient('rdr_rp_postid_'. $post->ID .'_style_'.$options['style_rp']);
+        if(false !== $my_query){
+            goto show_rdr_rp;
+        }
+    }
 
     // Traitement find by
     switch( $options['find_by'] ){
@@ -91,6 +98,11 @@ function get_rdr_related_post($custom_options = array(), $per_page = 3, $style_r
 
     $my_query = new WP_Query($args);
 
+    if($options['caching']){
+        set_transient( 'rdr_rp_postid_'. $post->ID .'_style_'.$options['style_rp'], $my_query, HOUR_IN_SECONDS );
+    }
+
+    show_rdr_rp:
     if( $my_query->have_posts() ) {
 
         if($style_rp == 1){
