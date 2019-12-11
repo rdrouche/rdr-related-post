@@ -9,3 +9,4 @@ La configuration des options se fait par l'appel de la fonction en passant des p
 Rendu :
 
 ![image in post](https://github.com/rdrouche/rdr-related-post/blob/master/screen_1.png)
+<img src="https://github.com/rdrouche/rdr-related-post/blob/master/screen_1.png" width="100" height="100">
