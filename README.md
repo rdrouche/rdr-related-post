@@ -75,3 +75,8 @@ Utilisation avec des paramètres :
 Créer un block Code Court et entrer le code [get_rdr_rp] ou avec les paramètres [get_rdr_rp find_by=cat per_page=10]
 
 ## Template personnalisé
+
+Il est possible d'utiliser un template personnalisé pour l'affichage des articles similaires, ce qui permet d'utiliser un grid CSS deja chargé et d'afficher les articles à votre convenance.
+
+- Copier le fichier templates/rdr-rp-style-custom.php dans un dossiers templates de votre theme.
+- Passer en paramètre style_rp => 'perso' pour l'appel par fonction ou style_rp=perso pour par shortcode.
