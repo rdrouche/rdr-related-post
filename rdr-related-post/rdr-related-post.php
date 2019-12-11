@@ -46,7 +46,7 @@ function get_rdr_related_post($custom_options = array()){
     // Param Query
     $args=array(
         'post__not_in'      =>  array($post->ID),
-        'posts_per_page'    =>  $per_page,
+        'posts_per_page'    =>  $options['per_page'],
         'caller_get_posts'  =>  1,
         'meta_key'          => '_thumbnail_id',
         'orderby'           => 'rand',
@@ -117,7 +117,7 @@ function get_rdr_related_post($custom_options = array()){
 
     show_rdr_rp:
     if( $my_query->have_posts() ) {
-        echo "dans la boucle";
+       
         if($options['style_rp'] == 1){
             include RDR_RP_PLUGIN_DIR . DS . 'templates' . DS . 'rdr-rp-style-1.php';  
         }elseif($options['style_rp'] == 2){            
