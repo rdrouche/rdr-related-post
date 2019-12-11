@@ -18,6 +18,10 @@ Utilisation du code court dans Gutenberg
 
 Le CSS utilisé dans les templates par défaut utilise soit le grid bootstrap (1 et 2) ou unsemantic-grid
 
+## Installation
+
+Envoyer le dossier rdr-related-post dans le répertoire plugins de votre site Wordpress.
+
 ## Liste des paramètres utilisables
 
 L'appel de la fonction get_rdr_related_post prend les paramètres dans array PHP, l'appel par shortcode prend les paramètres nommés. (voir section exemple)
@@ -30,3 +34,4 @@ L'appel de la fonction get_rdr_related_post prend les paramètres dans array PHP
     - tag : (défaut) utilise les tags de l'article
     - cat : catégories
     - both : tag et catégories, élément le plus restrictif
+- load_css : ce paramètre permet de forcer le chargement du fichier CSS grid de votre choix. Ils sont inclus dans le dossiers asset/css du plugin. Il faut passer le nom du fichier dans l'extension (.css).
