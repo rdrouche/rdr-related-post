@@ -70,3 +70,8 @@ Utilisation avec des paramètres :
 </div><!-- /.inside-article -->
 <!-- END RELATED POST -->
 ```
+### Gutenberg
+
+Créer un block Code Court et entrer le code [get_rdr_rp] ou avec les paramètres [get_rdr_rp find_by=cat per_page=10]
+
+## Template personnalisé
