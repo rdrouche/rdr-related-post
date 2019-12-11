@@ -22,6 +22,6 @@ Le CSS utilisé dans les templates par défaut utilise soit le grid bootstrap (1
 
 L'appel de la fonction get_rdr_related_post prend les paramètres dans array PHP, l'appel par shortcode prend les paramètres nommés. (voir section exemple)
 
--per_page : nombre de post à afficher, par défaut 3.
--style_rp : template à utiliser, il est possible d'utiliser un template personnel (voir utiler un template personnel). Par défaut 3 (rdr-rp-style-3.php)
--post_type : Type de post wordpress par défaut post. voir <a href="https://developer.wordpress.org/reference/classes/wp_query/#post-type-parameters" target="_blank">Post Type Parameters</a>
+- per_page : nombre de post à afficher, par défaut 3.
+- style_rp : template à utiliser, il est possible d'utiliser un template personnel (voir utiler un template personnel). Par défaut 3 (rdr-rp-style-3.php)
+- post_type : Type de post wordpress par défaut post. voir <a href="https://developer.wordpress.org/reference/classes/wp_query/#post-type-parameters" target="_blank">Post Type Parameters</a>
