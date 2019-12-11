@@ -6,5 +6,6 @@ Le plugin est léger, il est composé de deux fonctions, dont une qui permet l'a
 La configuration des options se fait par l'appel de la fonction en passant des paramètres.
 
 ### Aperçu
-Rendu : 
+Rendu :
+
 ![image in post](https://github.com/rdrouche/rdr-related-post/blob/master/screen_1.png)
