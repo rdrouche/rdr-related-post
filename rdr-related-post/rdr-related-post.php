@@ -18,14 +18,11 @@ if( !defined('DS') ){
     define('DS', DIRECTORY_SEPARATOR);
 }
 
-
 /**
  * Permet l'affichage d'article en relatation
  * Ajout de poste aleatoire sur pas de tag sur le post.
  * 
- * @param   int     $post_id    Post ID
  * @param   array   $custom_options    Param affichage posts
- * @param   int     $style_rp   Result HTML
  */
 function get_rdr_related_post($custom_options = array()){
     global $post; 
@@ -135,6 +132,9 @@ function get_rdr_related_post($custom_options = array()){
 
 /**
  * Get Related Post by Shortcode
+ * samples shortcode 
+ * Default option : [get_rdr_rp] find_by=cat
+ * With options : [get_rdr_rp find_by=cat per_page=10]
  */
 function rdr_rp_sc($atts = []){
     ob_start();
