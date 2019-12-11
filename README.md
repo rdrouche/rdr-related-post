@@ -42,3 +42,12 @@ Deux possibilités pour utiliser RDR Related Post.
 
 - Appel de la fonction directement dans un fichier
 - Appel par shortcode [get_rdr_rp]
+
+### Appel de la fonction
+
+Dans le fichier de votre thème généralement (content-single.php) qui gére l'affichage des articles, ajouter à l'endroit voulu le code suivant : 
+
+```php
+<?php
+get_rdr_related_post();
+?>
