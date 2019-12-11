@@ -35,3 +35,10 @@ L'appel de la fonction get_rdr_related_post prend les paramètres dans array PHP
     - cat : catégories
     - both : tag et catégories, élément le plus restrictif
 - load_css : ce paramètre permet de forcer le chargement du fichier CSS grid de votre choix. Ils sont inclus dans le dossiers asset/css du plugin. Il faut passer le nom du fichier dans l'extension (.css).
+
+## Utilisation
+
+Deux possibilités pour utiliser RDR Related Post.
+
+- Appel de la fonction directement dans un fichier
+- Appel par shortcode [get_rdr_rp]

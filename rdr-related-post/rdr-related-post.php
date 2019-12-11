@@ -134,7 +134,7 @@ function get_rdr_related_post($custom_options = array()){
 /**
  * Get Related Post by Shortcode
  * samples shortcode 
- * Default option : [get_rdr_rp] find_by=cat
+ * Default option : [get_rdr_rp]
  * With options : [get_rdr_rp find_by=cat per_page=10]
  */
 function rdr_rp_sc($atts = []){
