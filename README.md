@@ -5,7 +5,11 @@ Le plugin est léger, il est composé de deux fonctions, dont une qui permet l'a
 
 La configuration des options se fait par l'appel de la fonction en passant des paramètres.
 
-### Aperçu
+## Aperçu
 Rendu :
 
 <img src="https://github.com/rdrouche/rdr-related-post/blob/master/screen_1.png" width="500">
+
+Utilisation du code court dans Gutenberg
+
+<img src="https://github.com/rdrouche/rdr-related-post/blob/master/screen_2.png">
